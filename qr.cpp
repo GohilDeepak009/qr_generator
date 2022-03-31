@@ -13,24 +13,24 @@ int main()
 
     if (sock < 0)
     {
-        cout << "[! UNABLE TO CREATE SOCKET]\n";
+        cout << "! [UNABLE TO CREATE SOCKET]\n";
         return -1;
     }
     else
     {
-        cout << "[ :) SOCKET CREATED]\n";
+        cout << ":) [SOCKET CREATED]\n";
     }
 
     struct sockaddr_in qr = {'\0', AF_INET, htons(80), {inet_addr("5.9.243.188")}};
 
     if (connect(sock, (struct sockaddr *)&qr, sizeof(qr)) < 0)
     {
-        cout << "[! UNABLE TO CONNECT WITH SERVER]\n";
+        cout << "! [UNABLE TO CONNECT WITH SERVER]\n";
         return -1;
     }
     else
     {
-        cout << "[ :) CONNECTED WITH SERVER]\n";
+        cout << ":) [CONNECTED WITH SERVER]\n";
     }
 
     string base_request = "GET /";
